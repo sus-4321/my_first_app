@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -32,8 +34,8 @@ class MyHomePage extends StatelessWidget {
         ),
       ),
       body: Center(
-        child:
-        Image.asset("assets/images/riize10.jpg"),     
+        // child:
+        // Image.asset("assets/images/riize10.jpg"),     
             // Image.network(
             //   "https://www.ticketbuynow.com/wp-content/uploads/2025/05/riize9.png",
             // ), 
@@ -44,8 +46,8 @@ class MyHomePage extends StatelessWidget {
 }
 
 @override
-Widget build(BuildContext context) {
-  return Scaffold(
+Future<Widget> build(BuildContext context) async {
+    return Scaffold(
     appBar: AppBar(
       title: const Text(
         "Rise Realize!!",
@@ -54,10 +56,12 @@ Widget build(BuildContext context) {
     ),
     //
     body: Center(
+      heightFactor: 1,
+      widthFactor: 1,
       child: Stack(
         alignment: Alignment.bottomCenter,
         children: [
-          // image.aset("assets/images/riize10.jpg"),
+          Image.asset("assets/images/riize10.jpg"),
           const Text(
             "Riize",
             style: TextStyle(
