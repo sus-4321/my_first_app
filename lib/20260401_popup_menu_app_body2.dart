@@ -15,11 +15,24 @@ class AppBody extends StatelessWidget {
         ),
         offset: const Offset(100, 30),
         onSelected: (value) => _showSnackBar(context, "你選擇的偶像 $value"),
-        onCanceled: () => _showSnackBar(context, "你取消了選擇"),
-        itemBuilder: (context) => const [
+        onCanceled: () => _showSnackBar(context, "你取消了偶像選擇"),
+        itemBuilder: (context) => [
          PopupMenuItem<int>(
           value: 1,
-          child: Text("將太郎", style: TextStyle(fontSize: 20.0),),
+          child: Row(
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(4.0),
+                child: Image.network("https://imgproxy.poponote.app/1/auto/1000/0/sm/0/aHR0cHM6Ly9hc3NldHMucG9wb25vdGUuYXBwL25vdGUvNjYzMGFhMWUxNmMyMWIwMDA3YzI4MTc3L21lZGlhLzY2MzBjNjQ4MTZjMjFiMDAwN2M0YzQ0MQ==",
+                width: 30.0,
+                height: 30.0,
+                fit: BoxFit.cover,),
+              ),               
+               const SizedBox(width: 10,),
+               const Text ("將太郎", style: TextStyle(fontSize: 20.0),),
+            ],
+          ),
+         
          ),
   
         PopupMenuItem<int>(
